@@ -30,12 +30,14 @@ a {
     max-width: 1158px;
     padding: 0 15px;
     margin: 0 auto;
+    
 }
 
 /* header */
 
 .page-header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container { 
@@ -89,6 +91,23 @@ a {
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #2e2f42;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link.current {
+    position: relative;
+}
+
+.nav-link.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color:#404bbf;
+
 }
 
 .contacts {
@@ -109,31 +128,32 @@ a {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .contacts-link:hover,
-.contacts-link:focus {
+.contacts-link:focus, 
+.nav-link.current 
+{
     color: #404bbf;
 }
 
 .section-hero {
     background-color: #2E2F42;
+    background-image: radial-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url("/images/people-office.jpg");
     width: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
     text-align: center;
     padding: 188px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
-
-.hero-content {
-    margin: 0 auto;
-    max-width: 496px;
-    text-align: center;
-    display: block;
     
 }
 
@@ -145,7 +165,10 @@ a {
     letter-spacing: 0.02em;
     color: #fff;
     max-width: 496px;
-    margin-bottom: 40px;  
+    margin-bottom: 40px; 
+    margin: 0 auto; 
+    text-align: center;
+    display: block;
 }
 
 .button {
@@ -163,6 +186,7 @@ a {
     display: block;
     height: 56px;
     min-width: 169px;
+    transition:  background-color 250ms ease;;
    
    
  
@@ -175,7 +199,10 @@ a {
  
 
 .section-second {
-    padding: 120px 0 120px;    
+    padding: 120px 0 120px;
+    
+   
+       
 }
 
 .visually-hidden {
@@ -193,16 +220,35 @@ a {
 
 .section-title-list {
     max-width: 1128px;
-    margin: auto;
     display: flex;
-    gap: 24px;   
-    
+    gap: 24px;
+    margin-top: 8px;
+    justify-content: center;
+      
 }
 
 .section-title-item {
     flex-basis: calc((100% - 72px) /4);
-    
+    border-radius: 4px;
+    position: relative; 
+    width: 264px;
+    height: 224px;
+    margin-bottom: 8px;
+          
 }
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    margin-bottom: 8px;
+}
+
 
 .section-add-title {
     font-weight: 500;
@@ -211,6 +257,7 @@ a {
     letter-spacing: 0.02em;
     color:  #2e2f42;
     margin-bottom: 8px;
+    
 }
 
 .section-description {
@@ -256,23 +303,55 @@ a {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     width: calc((100% - 72px) /4);
     margin: 0, auto;
-    display: block;
+   
+    }
+
+    
+.social-networks-list {
+        display: flex;
+        justify-content: center;
+        gap: 16px; 
+        padding: 0;
+        margin-top: 8px;
+        list-style: none;
+    }
+    
+.social-link,.social-link-list {
+        width: 40px;
+        height: 40px;
+        background-color: #4D5AE5; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 250ms ease;
     
     }
 
-    .team-card-content {
+.social-link:hover {
+    background: #404bbf;
+}
+    
+
+.icon-social-networks {
+        fill: #fff;
+         
+        
+    }
+.team-card-content {
         padding: 32px 0;
     }
 
 
 
-    .team-add-title { 
+.team-add-title { 
     font-weight:  500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42; 
     margin-bottom: 8px;
+    
 }
 
 .team-description {
@@ -287,9 +366,8 @@ a {
 .our-portfolio {
     padding-top: 120px;
     padding-bottom: 120px;
+    
 }
-
-
 
 .portfolio-title {
         font-size: 36px;
@@ -314,8 +392,42 @@ a {
 
 .portfolio-list-item {
     margin-bottom: 48px 0;
-    width: calc((100% - 48px) / 3);    
+    width: calc((100% - 48px) / 3); 
+       
 }
+
+.portfolio-info{
+    border-bottom: 1px solid #e7e9fc;
+    border-left: 1px solid #e7e9fc;
+    border-right: 1px solid #e7e9fc;
+    padding: 32px 16px;
+    width: 360px;
+    height: 120px;
+}
+
+.portfolio-overlay {
+    
+    transform: translateY(0%);
+}
+
+
+.stylish-and-user-friendly {
+    position: absolute;
+    top: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(0%); 
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+   
+}
+
 
 img {
     display: block;
@@ -378,4 +490,38 @@ img {
     max-width: 1158px;
     text-align: left;
     width: 264px;
+}
+
+.icon-social-networks-footer {
+     fill: #fff;
+}
+
+.footer-social-media {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff; 
+    text-align: left;
+    position: relative;
+    
+     
+}
+
+.social-link-list:hover {
+    background-color: #31D0AA; 
+    transform: scale(1.05);
+}
+
+.icon-social-networks-footer {
+    fill: #f4f4fd;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 24px;
+
 }
