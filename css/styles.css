@@ -309,7 +309,7 @@ a {
 .social-networks-list {
         display: flex;
         justify-content: center;
-        gap: 16px; 
+        gap: 24px; 
         padding: 0;
         margin-top: 8px;
         list-style: none;
@@ -481,6 +481,7 @@ img {
     text-decoration: none;
     display: inline-block;
     margin-bottom: 16px;
+    
 }
 .page-footer {
     background-color: #2e2f42;
@@ -506,7 +507,7 @@ img {
     margin-bottom: 16px;
 }
 
-.social-networks{
+.social-networks {
     margin-right: 120px;
 }
 
