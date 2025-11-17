@@ -530,7 +530,8 @@ img {
     
 }
 
-.social-link-list .social-link .social-link-transition { 
+.social-link, 
+.social-link-list { 
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
 }
  
